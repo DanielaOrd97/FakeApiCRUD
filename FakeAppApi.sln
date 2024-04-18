@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeAppApi", "FakeAppApi.csproj", "{636C941C-CCAF-4C9C-8F05-EFC596A7A37F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{636C941C-CCAF-4C9C-8F05-EFC596A7A37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{636C941C-CCAF-4C9C-8F05-EFC596A7A37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{636C941C-CCAF-4C9C-8F05-EFC596A7A37F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{636C941C-CCAF-4C9C-8F05-EFC596A7A37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{636C941C-CCAF-4C9C-8F05-EFC596A7A37F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{636C941C-CCAF-4C9C-8F05-EFC596A7A37F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8AF3A9A-6649-4E98-81FD-F4E0AA2EC1B1}
+	EndGlobalSection
+EndGlobal

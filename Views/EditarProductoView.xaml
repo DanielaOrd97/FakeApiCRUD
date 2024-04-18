@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FakeAppApi.ViewModels"
+             x:Class="FakeAppApi.Views.EditarProductoView"
+             Title="EditarProductoView"
+             x:Name="editar"
+             >
+
+    <ContentPage.BindingContext>
+        <vm:ProductsViewModel></vm:ProductsViewModel>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout HorizontalOptions="Center">
+        <Label FontAttributes="Bold">Nombre:</Label>
+        <Entry Margin="0,0,0,30" WidthRequest="800" Text="{Binding BindingContext.ProductoPut.title, Source={x:Reference editar}}"></Entry>
+        <Label FontAttributes="Bold">Precio:</Label>
+        <Entry Margin="0,0,0,30" WidthRequest="800" Text="{Binding BindingContext.ProductoPut.price, Source={x:Reference editar}}"></Entry>
+        <HorizontalStackLayout>
+            <Button Margin="0,0,30,0" Text="Editar" Command="{Binding BindingContext.EditarProductosCommand, Source={x:Reference editar}}" Clicked="Button_Clicked"></Button>
+            <Button Text="Cancelar"></Button>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

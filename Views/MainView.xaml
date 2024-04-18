@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm ="clr-namespace:FakeAppApi.ViewModels"
+             x:Class="FakeAppApi.Views.MainView"
+             x:Name="main"
+             BackgroundColor="#AD88C6"
+             >
+
+    <ContentPage.BindingContext>
+        <vm:ProductsViewModel></vm:ProductsViewModel>
+    </ContentPage.BindingContext>
+    
+    <!--HorizontalList
+        VerticalGrid,2
+        HorizontalGrid,3
+        SelectionMode-->
+    <ScrollView>
+        <VerticalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,40">
+                <Label VerticalTextAlignment="Center"
+                       FontSize="40"
+                       FontAttributes="Bold"
+                       Text="FAKE STORE"
+                       HorizontalOptions="Start"
+                       TextColor="White"
+                       >
+                </Label>
+                <Button FontAttributes="Bold" Text="Agregar producto" Clicked="Button_Clicked" Margin="550,0,0,0" HeightRequest="30" WidthRequest="150"></Button>
+            </HorizontalStackLayout>
+            
+
+            <CollectionView x:Name="lista" ItemsSource="{Binding ListaProductos}" ItemsLayout="VerticalGrid,3" Margin="0" SelectedItem="{Binding Producto}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BackgroundColor="White" HeightRequest="480" StrokeShape="RoundRectangle 10,10,10,10" Margin="10" Stroke="#6420AA">
+                            <VerticalStackLayout>
+                                <Image Source="{Binding images[0]}" Aspect="Fill" HeightRequest="300"></Image>
+                                <Border Margin="5,5,0,0" StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="30" WidthRequest="30" BackgroundColor="#6C22A6" HorizontalOptions="Start">
+                                    <Label Text="{Binding id}" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                                </Border>
+                                <Label Text="{Binding title}" HorizontalTextAlignment="Center" Margin="10,0,0,0"></Label>
+                                <!--<Label Text="{Binding category.name}"></Label>-->
+                                <HorizontalStackLayout HorizontalOptions="Center">
+                                    <Label Text="Category: "></Label>
+                                    <Label Text="{Binding category.name}"></Label>
+                                </HorizontalStackLayout>
+                                
+                                <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
+                                    <!--<Button Text="Editar" Command="{Binding BindingContext.EditarProductosCommand, Source={x:Reference Name=lista}}" CommandParameter="{Binding id}"></Button>-->
+                                    <Button Margin="0,0,20,0" Text="Editar" Command="{Binding BindingContext.VerIdProductoCommand, Source={x:Reference Name=lista}}" CommandParameter="{Binding id}" Clicked="Button_Clicked_2"></Button>
+                                    <Button Text="Eliminar" Command="{Binding BindingContext.EliminarProductosCommand, Source={x:Reference Name=lista}}" CommandParameter="{Binding id}"></Button>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+
+
+        </VerticalStackLayout>
+
+        
+       
+    </ScrollView>
+
+
+</ContentPage>
